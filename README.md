@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/VoyagerFoundation/VoyagerNetwork.svg?branch=develop)](https://travis-ci.org/VoyagerFoundation/VoyagerNetwork)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
