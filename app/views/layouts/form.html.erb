@@ -12,7 +12,11 @@
     <% end %>
 
     <%= render "shared/top_bar" %>
-    <%= yield %>
+    <div class="flexformcontainer">
+      <div class="voyager-form">
+        <%= yield %>
+      </div>
+    </div>
 
   </body>
 </html>

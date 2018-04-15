@@ -1,0 +1,30 @@
+<nav class="top-bar topbar-responsive">
+  <div class="top-bar-title">
+    <a class="topbar-responsive-logo" href="#">
+    <%= image_tag "logo/VF_logo_full_white.png", class:"vlogo" %>
+  </div>
+  <div id="topbar-responsive" class="topbar-responsive-links">
+    <div class="top-bar-right">
+      <ul class="menu simple vertical medium-horizontal">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Initiatives</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+          </li>
+        <% else %>
+          <li>
+          <button type="button" class="button hollow topbar-responsive-button"><%= link_to('Login', new_user_session_path)  %></button>
+          </li>
+        <% end %>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
