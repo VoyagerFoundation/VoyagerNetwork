@@ -12,27 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180430053127) do
 
-  create_table "project_submission_files", force: :cascade do |t|
-    t.integer "project_submission_id"
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.integer "file_file_size"
-    t.datetime "file_updated_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_submission_id"], name: "index_project_submission_files_on_project_submission_id"
-  end
-
-  create_table "project_submissions", force: :cascade do |t|
-    t.string "name"
-    t.string "website"
-    t.string "email"
-    t.string "country"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
