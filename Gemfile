@@ -38,6 +38,8 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-google-oauth2'
 gem 'foundation-rails'
 
+gem 'haml'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
