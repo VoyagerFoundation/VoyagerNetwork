@@ -1,12 +1,18 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index_drafts]
   layout "form"
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.where(status: [:published])
+  end
+
+  # GET /projects_drafts
+  # GET /projects_drafts.json
+  def index_drafts
+    @projects = Project.where(status: [:draft])
   end
 
   # GET /projects/1
@@ -27,6 +33,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.user = current_user
 
     respond_to do |format|
       if @project.save
@@ -51,6 +58,13 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # PATCH/PUT /projects/1/publish
+  def publish 
+    set_project
+    @project.published!
+    render "show"
   end
 
   # DELETE /projects/1

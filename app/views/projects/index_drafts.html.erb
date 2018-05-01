@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1>Projects Drafts</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <%= link_to "Drafts", projects_drafts_path %>
+  <%= link_to "Published", projects_path %>
   <tbody>
     <% @projects.each do |project| %>
       <tr>

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180430053127) do
     t.text "description"
     t.string "website"
     t.date "start_date"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
