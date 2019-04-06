@@ -40,6 +40,9 @@ gem 'foundation-rails'
 
 gem 'haml'
 
+gem "react_on_rails", "11.1.4"
+gem "webpacker", "~> 3"
+
 gem 'font-awesome-rails'
 gem 'wysiwyg-rails'
 
