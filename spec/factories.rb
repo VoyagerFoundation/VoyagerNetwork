@@ -1,4 +1,19 @@
 FactoryBot.define do
+  factory :hypothesis do
+    hypothesis "MyString"
+    type 1
+    validity 1
+    problem nil
+  end
+  factory :problem_project do
+    problem nil
+    project nil
+    type 1
+  end
+  factory :problem do
+    name "MyString"
+    description "MyString"
+  end
   factory :project do
     user nil
     name "MyString"

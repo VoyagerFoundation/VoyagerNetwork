@@ -1,0 +1,37 @@
+<%= form_with(model: hypothesis, local: true) do |form| %>
+  <% if hypothesis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hypothesis.errors.count, "error") %> prohibited this hypothesis from being saved:</h2>
+
+      <ul>
+      <% hypothesis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hypothesis %>
+    <%= form.text_field :hypothesis, id: :hypothesis_hypothesis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.number_field :type, id: :hypothesis_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :validity %>
+    <%= form.number_field :validity, id: :hypothesis_validity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :problem_id %>
+    <%= form.text_field :problem_id, id: :hypothesis_problem_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

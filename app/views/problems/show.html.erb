@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="medium-4 columns">
+    <p>
+      <strong><%= @problem.name %></strong>
+    </p>
+    <hr>
+    <p>
+      <%= @problem.description.html_safe %>
+    </p>
+    <%= link_to 'Edit', edit_problem_path(@problem) %> |
+    <%= link_to 'Back', problems_path %>
+  </div>
+
+  <div class="medium-4 columns">
+  <p>
+    <strong>Projects:</strong>
+    <% @problem.projects.each do |p| %>
+      <li><%= link_to p.name, p %></li>
+    <% end %>
+  </p>
+  </div>
+<div>
+
+
+</div>
+

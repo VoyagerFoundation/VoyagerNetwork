@@ -40,6 +40,9 @@ gem 'foundation-rails'
 
 gem 'haml'
 
+gem 'font-awesome-rails'
+gem 'wysiwyg-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,7 +54,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '~> 4'
   gem 'meta_request'
 end
 
