@@ -1,0 +1,32 @@
+= form_for @project, url: {action: "create"}, html: {"data-abide" => '', multipart: true} do |f|
+
+  - if @project.errors.any?
+    #error_explanation
+      %p.lead= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      .alert.alert-error
+        %ul
+          - @project.errors.full_messages.each do |msg|
+            %li= msg
+
+  .callout
+    .floated-label-wrapper
+      %label{:for => "name"}> 
+        .label * Name 
+        = f.text_field :name, :placeholder => "Name", :type => "text", required: true
+        %small.form-error * required
+
+    .floated-label-wrapper
+      %label{:for => "website"}> 
+        .label Website
+        = f.text_field :website, :placeholder => "Website", :type => "url"
+        %small.form-error need to be valid url 
+
+    .floated-label-wrapper
+      %label{:for => "description", :size => "30x20"}> 
+        .label * Description
+        = f.text_area :description, :placeholder => "Description", :type => "text", required: true
+        %small.form-error * required
+
+    .form-actions
+      = f.submit 'Submit project', class: 'btn btn-save'
+      = link_to 'Cancel', projects_path, class: 'btn'
