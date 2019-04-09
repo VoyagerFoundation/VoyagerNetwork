@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hypothesis:</strong>
+  <%= @hypothesis.hypothesis %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @hypothesis.type %>
+</p>
+
+<p>
+  <strong>Validity:</strong>
+  <%= @hypothesis.validity %>
+</p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @hypothesis.problem %>
+</p>
+
+<%= link_to 'Edit', edit_hypothesis_path(@hypothesis) %> |
+<%= link_to 'Back', hypotheses_path %>

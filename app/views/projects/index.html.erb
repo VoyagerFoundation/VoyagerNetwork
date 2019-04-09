@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Website</th>
+      <th>Start date</th>
+    </tr>
+  </thead>
+
+  <%= link_to "Drafts", projects_drafts_path %>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.name, project %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to project.website, project.website, target: "_blank" %></td>
+        <td><%= project.start_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

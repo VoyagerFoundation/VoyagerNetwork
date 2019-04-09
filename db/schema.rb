@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303135642) do
+ActiveRecord::Schema.define(version: 20180502175746) do
+
+  create_table "hypotheses", force: :cascade do |t|
+    t.string "hypothesis"
+    t.integer "type"
+    t.integer "validity"
+    t.integer "problem_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem_id"], name: "index_hypotheses_on_problem_id"
+  end
+
+  create_table "problem_projects", force: :cascade do |t|
+    t.integer "problem_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem_id"], name: "index_problem_projects_on_problem_id"
+    t.index ["project_id"], name: "index_problem_projects_on_project_id"
+  end
+
+  create_table "problems", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.text "description"
+    t.string "website"
+    t.date "start_date"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -4,14 +4,14 @@
   <%= render "shared/head" %>
 
   <body>
+    <%= render "shared/top_bar" %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-
-    <%= render "shared/top_bar" %>
+  
     <%= yield %>
 
   </body>

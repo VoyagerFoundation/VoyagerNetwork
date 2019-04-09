@@ -4,6 +4,8 @@
   <%= render "shared/head" %>
 
   <body>
+    <%= render "shared/top_bar" %>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -11,7 +13,7 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <%= render "shared/top_bar" %>
+
     <div class="flexformcontainer">
       <div class="voyager-form">
         <%= yield %>

@@ -1,0 +1,53 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.floated-label-wrapper {
+  position: relative;
+  padding-bottom: 16px;
+
+  label {
+    .label {
+      background: $white;
+      color: $primary-color;
+      font-size: 0.75rem;
+      font-weight: 600;
+      left: 0.75rem;
+      opacity: 0;
+      padding: 0 0.25rem;
+    
+      position: absolute;
+      top: 2rem;
+      transition: all 0.15s ease-in;
+      z-index: -1;
+  
+      &.show {
+        opacity: 1;
+        top: -0.35rem;
+        z-index: 1;
+        transition: all 0.15s ease-in;
+      }
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=url]{
+      border-radius: 4px;
+      font-size: 1.25em;
+      padding: 0.5em;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.requirements {
+  text-align: left; 
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-error {
+  margin: 0 !important;
+}

@@ -1,15 +1,15 @@
 <nav class="top-bar topbar-responsive">
   <div class="top-bar-title">
     <a class="topbar-responsive-logo" href="#">
-    <%= image_tag "logo/VF_logo_full_white.png", class:"vlogo" %>
+    <%= link_to(image_tag("logo/VF_logo_full_white.png", class:"vlogo"), root_path)%>
   </div>
   <div id="topbar-responsive" class="topbar-responsive-links">
     <div class="top-bar-right">
       <ul class="menu simple vertical medium-horizontal">
-        <li><a href="#">Home</a></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Initiatives</a></li>
+        <li><%= link_to "Problems", problems_path %></li>
+        <li><%= link_to "Projects", projects_path %></li>
         <li><a href="#">Contact</a></li>
         <li>
 
