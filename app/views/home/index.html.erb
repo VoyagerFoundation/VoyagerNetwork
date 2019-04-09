@@ -7,6 +7,14 @@
 
     Horisons:
 
+      <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.name, project %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to project.website, project.website, target: "_blank" %></td>
+        <td><%= project.start_date %></td>
+      </tr>
+    <% end %>
   </div>
 </div>
 
