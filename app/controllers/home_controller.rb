@@ -5,5 +5,6 @@ class HomeController < ApplicationController
 
   def index
     projects
+    @featured_project = Project.get_random_project
   end
 end
