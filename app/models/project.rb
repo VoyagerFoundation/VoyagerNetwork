@@ -10,4 +10,5 @@ class Project < ApplicationRecord
   def self.get_random_project
     Project.first
   end
+
 end
