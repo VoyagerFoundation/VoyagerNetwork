@@ -10,6 +10,14 @@
   <%= @project.name %>
 </p>
 
+<% if @project.image.attached? %>
+<p>
+  <strong>Image:</strong>
+  
+  <%= image_tag @project.image.variant(resize: "100x100") %>
+</p>
+<% end %>
+
 <p>
   <strong>Status:</strong>
   <%= @project.status.titleize %>

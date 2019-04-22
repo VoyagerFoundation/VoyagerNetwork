@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index_drafts]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :delete_project_image, :publish]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index_drafts, :delete_project_image]
   layout "form"
 
   # GET /projects
@@ -62,7 +62,6 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1/publish
   def publish 
-    set_project
     @project.published!
     render "show"
   end
@@ -77,6 +76,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def delete_project_image
+    @project.image.purge
+    respond_to do |format|
+      format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+      format.json { render :show, status: :ok, location: @project }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -85,6 +92,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:user_id, :name, :description, :website, :start_date)
+      params.require(:project).permit(:user_id, :name, :description, :website, :start_date, :image)
     end
 end

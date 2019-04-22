@@ -1,12 +1,16 @@
-<div class="container">
-  <div>
-    Area: Economy
-    Problems: Inequality 
-
-    Sources: 
-
-    Horisons:
-
+<div class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-8">
+      
+      <div class="card vf-main-card" >
+        <div class="card-divider">
+          <h4><%= link_to @featured_project.name, @featured_project %></h4>
+        </div>
+        <%= image_tag @featured_project.image.variant(resize: "800") %>
+        <div class="card-section">
+          <p><%= @featured_project.description.truncate(300, omission: '... (continued)') %></p>
+        </div>
+      </div>
       <% @projects.each do |project| %>
       <tr>
         <td><%= link_to project.name, project %></td>
@@ -14,10 +18,15 @@
         <td><%= link_to project.website, project.website, target: "_blank" %></td>
         <td><%= project.start_date %></td>
       </tr>
-    <% end %>
+      <% end %>
+      adsfsdffsdfsdf sdfsdf sdf dsfdsf dfdsfdsfdslkfjdsoifshdfuhsdi fudhs ifuhds iuhfdsiufh idsuhiuh iuh iuh sdifuhpefuhqpohfoh  iuh 
+    </div>
+    <div class="cell small-4">
+      <div class="tweets float-right">
+        <a class="twitter-timeline" href="https://twitter.com/VoyagerPod?ref_src=twsrc%5Etfw" data-tweet-limit="3">Tweets by VoyagerPod</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
   </div>
+ 
 </div>
 
-<div class="tweets">
-  <a class="twitter-timeline" href="https://twitter.com/VoyagerPod?ref_src=twsrc%5Etfw">Tweets by VoyagerPod</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
