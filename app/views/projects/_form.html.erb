@@ -22,13 +22,25 @@
   </div>
 
   <div class="field">
+    <%= form.label 'Project picture ( width: 800px )' %>
+    <% if @project.image.attached? %>
+    <%= image_tag @project.image.variant(resize: "100") %>
+    <%= link_to 'Remove', "image",
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= form.file_field :image, id: :project_image, accept: 'image/png,image/jpeg', multiple: false  %> 
+  </div>
+  
+
+  <div class="field">
     <%= form.label :website %>
     <%= form.text_field :website, id: :project_website %>
   </div>
 
   <div class="field">
     <%= form.label :start_date %>
-    <%= form.date_select :start_date, id: :project_start_date %>
+    <%= form.date_field :start_date, id: :project_start_date %>
   </div>
 
   <div class="actions">
